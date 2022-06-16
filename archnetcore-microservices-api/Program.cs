@@ -1,6 +1,11 @@
+using archnetcore_microservices_api.services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container. (Injection Dependency)
+builder.Services.AddScoped<IPersonServices, PersonService>();
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
